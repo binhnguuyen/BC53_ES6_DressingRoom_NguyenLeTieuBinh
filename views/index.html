@@ -99,15 +99,15 @@
       </div>
       <div class="col-md-4">
         <div class="contain">
-          <div class="body"></div>
-          <div class="model"></div>
-          <div class="hairstyle"></div>
-          <div class="necklace"></div>
-          <div class="bikinitop"></div>
-          <div class="bikinibottom"></div>
-          <div class="handbag"></div>
-          <div class="feet"></div>
-          <div class="background"></div>
+          <div class="body" id="body"></div>
+          <div class="model" id="model"></div>
+          <div class="hairstyle" id="hairstyle"></div>
+          <div class="necklace" id="necklace"></div>
+          <div class="bikinitop" id="bikinitop"></div>
+          <div class="bikinibottom" id="bikinibottom"></div>
+          <div class="handbag" id="handbag"></div>
+          <div class="feet" id="feet"></div>
+          <div class="background" id="background"></div>
         </div>
       </div>
     </div>
@@ -124,10 +124,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
       integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="./../models/ListChosen.js"></script>
-    <script type="module" src="./../models/ChoseItem.js"></script>
-    <script type="module" src="./../utils/callData.js"></script>
-    <script type="module" src="./../controllers/main.js"></script>
+    <!-- <script src="./../models/ListChosen.js"></script> -->
+    <!-- <script src="./../models/ChoseItem.js"></script> -->
+    <!-- <script type="module" src="./../utils/callData.js"></script> -->
+    <script src="./../services/ProductsServ.js"></script>
+    <script src="./../controllers/main.js"></script>
 </body>
 
 </html>
