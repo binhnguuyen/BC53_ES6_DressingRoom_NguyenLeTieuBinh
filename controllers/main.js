@@ -220,43 +220,43 @@ window.thuDo = (idPhuKien) => {
         
         if ( phuKien.type === typetopclothes ) {
             htmlbikinitop += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             bikinitop.innerHTML = htmlbikinitop;
         }
         else if ( phuKien.type === typebotclothes ) {
             htmlbikinibottom += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             bikinibottom.innerHTML = htmlbikinibottom;
         }
         else if ( phuKien.type === typehairstyle ) {
             htmlhairstyle += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             hairstyle.innerHTML = htmlhairstyle;
         }
         else if ( phuKien.type === typenecklaces ) {
             htmlnecklace += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             necklace.innerHTML = htmlnecklace;
         }
         else if ( phuKien.type === typehandbag ) {
             htmlhandbag += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             handbag.innerHTML = htmlhandbag;
         }
         else if ( phuKien.type === typeresshoes ) {
             htmlfeet += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             feet.innerHTML = htmlfeet;
         }
         else if ( phuKien.type === typebackground ) {
             htmlbackground += `
-                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt="">
             `
             background.innerHTML = htmlbackground;
         }
