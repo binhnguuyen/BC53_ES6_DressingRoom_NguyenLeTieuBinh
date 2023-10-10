@@ -32,7 +32,7 @@ const renderPhuKien = (list, tabID) => {
                     <div class="text-primary text-center">
                         <h5>${value.name}</h5>
                     </div>
-                    <button id="btn-${value.id}" type="button" onclick="thuDo(${value.id})" class="btn btn-primary">Thử  đồ</button>
+                    <button id="btn-${value.id}" onclick="thuDo('${value.id}')" class="btn btn-primary ml-3">Thử  đồ</button>
                 </div>
             </div>
         `
@@ -48,6 +48,13 @@ const renderPhuKien = (list, tabID) => {
  * Tham số: 
  * Chú ý: 
  */
+let typetopclothes = "topclothes";
+let typebotclothes = "botclothes";
+let typeresshoes = "shoes";
+let typehandbag = "handbags";
+let typenecklaces = "necklaces";
+let typehairstyle = "hairstyle";
+let typebackground = "background";
 const getPhuKien = () => {
     let restopclothes = [];    
     let resbotclothes = [];    
@@ -56,13 +63,6 @@ const getPhuKien = () => {
     let resnecklaces = [];    
     let reshairstyle = [];    
     let resbackground = [];
-    let typetopclothes = "topclothes";
-    let typebotclothes = "botclothes";
-    let typeresshoes = "shoes";
-    let typehandbag = "handbags";
-    let typenecklaces = "necklaces";
-    let typehairstyle = "hairstyle";
-    let typebackground = "background";   
 
     // const promise = axios({
     //     method: "GET",
@@ -187,15 +187,82 @@ getNhomPhuKien();
  * Tham số: id
  * Chú ý: 
  */
+// let typetopclothes = "topclothes";
+// let typebotclothes = "botclothes";
+// let typeresshoes = "shoes";
+// let typehandbag = "handbags";
+// let typenecklaces = "necklaces";
+// let typehairstyle = "hairstyle";
+// let typebackground = "background";
 window.thuDo = (idPhuKien) => {
 
-    // console.log('idPhuKien: ', idPhuKien);
+    let bikinitop           = getEle("#bikinitop");
+    let bikinibottom        = getEle("#bikinibottom");
+    let hairstyle           = getEle("#hairstyle");
+    let necklace            = getEle("#necklace");
+    let handbag             = getEle("#handbag");
+    let feet                = getEle("#feet");
+    let background          = getEle("#background");
+
+    let htmlbikinitop       = "";
+    let htmlbikinibottom    = "";
+    let htmlhairstyle       = "";
+    let htmlnecklace        = "";
+    let htmlhandbag         = "";
+    let htmlfeet            = "";
+    let htmlbackground      = "";
+
 
     editProductByID(idPhuKien)
     .then(function (res) {
-        // gán cái get đc cho sp
-        var sp = res.data;
-        // console.log('sp: ', sp);
+        // gán cái get đc cho phuKien
+        var phuKien = res.data;
+        
+        if ( phuKien.type === typetopclothes ) {
+            htmlbikinitop += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            bikinitop.innerHTML = htmlbikinitop;
+        }
+        else if ( phuKien.type === typebotclothes ) {
+            htmlbikinibottom += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            bikinibottom.innerHTML = htmlbikinibottom;
+        }
+        else if ( phuKien.type === typehairstyle ) {
+            htmlhairstyle += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            hairstyle.innerHTML = htmlhairstyle;
+        }
+        else if ( phuKien.type === typenecklaces ) {
+            htmlnecklace += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            necklace.innerHTML = htmlnecklace;
+        }
+        else if ( phuKien.type === typehandbag ) {
+            htmlhandbag += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            handbag.innerHTML = htmlhandbag;
+        }
+        else if ( phuKien.type === typeresshoes ) {
+            htmlfeet += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            feet.innerHTML = htmlfeet;
+        }
+        else if ( phuKien.type === typebackground ) {
+            htmlbackground += `
+                <img src="${phuKien.imgSrc_png}" class="card-img-top" alt=""width="200" >
+            `
+            background.innerHTML = htmlbackground;
+        }
+        else {
+
+        }
 
       })
       .catch(function (err) {
@@ -203,48 +270,6 @@ window.thuDo = (idPhuKien) => {
         console.log("err", err);
       });
 }
-
-//     const promise = axios({
-//         method: "GET",
-//         url: `${URL}/${idPhuKien}`,
-//     })
-
-//     promise
-//         //get data thành công
-//         .then((result) => {
-//             var phuKien = result.data;
-//             console.log('phuKien: ', phuKien);
-//             console.log(result.data);
-//         })
-//         // get data thất bại
-//         .catch((err) => {
-//             console.log("err: ", err);
-//         })
-//         // luôn luôn chạy dù thành công, thất bại
-//         .finally(() => {
-            
-//         })
-// }
-
-// window.thuDo = (id) => {
-
-//     editProductByID(id)
-
-//         //get data thành công
-//         .then((result) => {
-//             console.log(result.data);
-//         })
-//         // get data thất bại
-//         .catch((err) => {
-//             console.log("err: ", err);
-//         })
-//         // luôn luôn chạy dù thành công, thất bại
-//         .finally(() => {
-            
-//         })
-// }
-// thuDo();
-
 
 
 
